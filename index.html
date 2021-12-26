@@ -57,14 +57,24 @@
 <main class=main>
 <article class=first-entry>
 <header class=entry-header>
-<h2>Hello World
+<h2>如何在 Mac M1 下安裝 Microsoft SQL SERVER ?
 </h2>
 </header>
 <section class=entry-content>
-<p>Hello 文章測試</p>
+<p>前言 近期剛入手 MacBook Pro M1版本，安裝一下目前所需要的開發環境，發現在安裝 Microsoft SQL SERVER 遇到了困難，在此分享一下我嘗試的解決方案
+第一種方式，雲主機架設 手邊剛好有 Oracle Cloud 提供的免費主機，我記得設備是這樣的
+CPU AMD Compute 採用 1/8 OCPU 和 1 GB 記憶體
+不是Arm架構的，照理來說應該是可以順利安裝成功
+參考一下微軟 「 在 Ubuntu 上安裝 SQL Server 並建立資料庫 」文章後，原本高興要準備連線的，但發現一直失敗
+後來查詢到原因是因為 SQL Server 記憶體最低要求需要 2G 以上，沒想到還有這種坑！！ 因為沒打算花錢租伺服器，因此找尋另一種方式
+第二種方式，安裝 Docker 有聽說目前 Docker 在 M1 機器上還是會遇到一些問題，不過我還是嘗試在 Docker 上運行 SQL Server
+我先找到的是官方容器映像
+docker pull mcr.microsoft.com/mssql/server:2019-latest 不幸的是，無法運行成功，原因是此容器映像還沒支援Arm架構
+後來爬文查找到另一個種容器映像
+docker pull mcr.microsoft.com/azure-sql-edge 運行下來是沒有問題的，至於 azure-sql-edge 這個是什麼，之前還沒真不知道，後來有查詢一下 「 什麼是 Azure SQL Edge？ 」有興趣的小夥伴可以看一下...</p>
 </section>
-<footer class=entry-footer><span title="2021-12-26 15:34:16 +0800 +0800">December 26, 2021</span></footer>
-<a class=entry-link aria-label="post link to Hello World" href=https://blog.haohere.com/2021/12/hello-world/></a>
+<footer class=entry-footer><span title="2021-12-26 20:31:35 +0800 +0800">December 26, 2021</span></footer>
+<a class=entry-link aria-label="post link to 如何在 Mac M1 下安裝 Microsoft SQL SERVER ?" href=https://blog.haohere.com/2021/12/%E5%A6%82%E4%BD%95%E5%9C%A8-mac-m1-%E4%B8%8B%E5%AE%89%E8%A3%9D-microsoft-sql-server/></a>
 </article>
 </main>
 <footer class=footer>
